@@ -31,9 +31,9 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.hoodadack.ui.VideoList.GalleryFragment"
+        android:name="com.example.hoodadack.ui.videoList.ShowListViewVideo"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_show_listview_videolist" />
 
     <fragment
         android:id="@+id/nav_slideshow"

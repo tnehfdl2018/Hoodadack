@@ -2,7 +2,6 @@ package com.example.hoodadack.ui.urlList;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,7 @@ import android.widget.ListView;
 import com.example.hoodadack.R;
 
 public class ShowLIstViewUrl extends Fragment {
-    public ListView listView;
+    private ListView listView;
 
 
     private HomeViewModel homeViewModel;
@@ -25,7 +24,7 @@ public class ShowLIstViewUrl extends Fragment {
         View root = inflater.inflate(R.layout.fragment_show_listview_urllist, container, false);
 
         // 리스트뷰 생성
-        listView = root.findViewById(R.id.urlList);
+        listView = root.findViewById(R.id.url_list);
 
         // AdapterForInsertUrl 객체 생성
         AdapterForInsertUrl adapterForInsertUrl = new AdapterForInsertUrl();
@@ -34,8 +33,6 @@ public class ShowLIstViewUrl extends Fragment {
         adapterForInsertUrl.addItem();
 
         listView.setAdapter(adapterForInsertUrl);
-
-
 
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

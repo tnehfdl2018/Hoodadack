@@ -8,7 +8,7 @@
     <string name="nav_header_desc">네비게이션 헤드</string>
     <string name="action_settings">설정</string>
 
-    <string name="menu_home">홈</string>
+    <string name="menu_home">후다닥</string>
     <string name="menu_gallery">페이지2</string>
     <string name="menu_slideshow">페이지3</string>
 
@@ -24,5 +24,12 @@
     <string name="wrongPw">비밀번호를 잘 못 입력하였습니다.</string>
     <string name="idHint">아이디를 입력하세요.</string>
     <string name="pwHint">비밀번호를 입력하세요.</string>
+
+
+    <string name="urlTitle">URL 입력</string>
+    <string name="insertURL">주소를 입력하세요.</string>
+    <string name="videoTitle">불러온 동영상 목록</string>
+
+    <string name="logout">로그아웃</string>
 
 </resources>

@@ -1,16 +1,16 @@
-package com.example.hoodadack.ui.page3;
+package com.example.hoodadack.ui.videoList;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class GalleryViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public GalleryViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Url");
+        mText.setValue("비디오");
     }
 
     public LiveData<String> getText() {

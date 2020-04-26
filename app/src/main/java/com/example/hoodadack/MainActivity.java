@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton english;
     private TextView wrongId;
     private TextView wrongPw;
+    private LinearLayout loginLayout; // mainActivity 레이아웃
+    private LinearLayout showUrlList; // urlList 레이아웃
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         english = findViewById(R.id.lanEnglish);
         wrongId = findViewById(R.id.wrongId);
         wrongPw = findViewById(R.id.wrongPw);
+        loginLayout = findViewById(R.id.loginLayout);
 
         // 라디오 그룹안의 변경이 생길시 반응하는 메소드
         lang_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -85,6 +89,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (valid()) {
                     // 다음페이지로 넘어가는 intent
+                    loginLayout.setVisibility(View.INVISIBLE); // 로그인 하는 레이아웃 invisible 처리
+                    // invisible 되있는 urlList레이아웃 visible로 변경하여 보여주기
+                    showUrlList = findViewById(R.id.urlListFragment);
+                    showUrlList.setVisibility(View.VISIBLE);
+
+                    TextView loginId; // textView 생성
+                    loginId = findViewById(R.id.login_id); // 네비게이션 드로우에 있는 textView 연결
+                    String emainId = id.getText().toString(); // 로그인시 입력했던 ID를 String변수에 담는다.
+                    loginId.setText(emainId); // 네비게이션 드로우에 있는 textView에 로그인 시 사용했던 ID를 세팅한다.
+
                     // 툴바 생성
                     Toolbar toolbar = findViewById(R.id.toolbar);
                     // 생성한 툴바 설정
@@ -94,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                     DrawerLayout drawer = findViewById(R.id.drawer_layout);
                     NavigationView navigationView = findViewById(R.id.nav_view);
 
-                    mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow).setDrawerLayout(drawer).build();
+                    mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_gallery).setDrawerLayout(drawer).build();
 
                     NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment);
 
@@ -105,18 +119,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "가즈아", Toast.LENGTH_SHORT).show();
 
                 } else {
-                    // 다음페이지로 넘어가는 intent
-                    Toast.makeText(getApplicationContext(), "이또한 가즈아", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(getApplicationContext(), "이런걸 틀리다니", Toast.LENGTH_SHORT).show();
                 }
 
-            }
-        });
-        // URL추가하는 페이지 테스트 중
-        Button testBtn = findViewById(R.id.testBtn);
-        testBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
             }
         });
     }

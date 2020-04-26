@@ -4,23 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.urlList.ShowLIstViewUrl"
-    android:orientation="vertical"
-    android:visibility="invisible"
-    android:id="@+id/urlListFragment">
+    tools:context=".ui.videoList.ShowListViewVideo"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/text_url"
-        android:text="@string/urlTitle"
+        android:text="@string/videoTitle"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="170dp"/>
+        android:paddingLeft="120dp"/>
 
 
     <ListView
-        android:id="@+id/url_list"
+        android:id="@+id/videoList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@null"/>
+        android:layout_height="wrap_content"/>
 </LinearLayout>
