@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="navigation_drawer_open">열려라 네비게이션드로우</string>
+    <string name="navigation_drawer_close">닫혀라 네비게이션드로우</string>
+    <string name="nav_header_title">안드로이드 스튜디오</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">네비게이션 헤드</string>
+    <string name="action_settings">설정</string>
+
+    <string name="menu_home">홈</string>
+    <string name="menu_gallery">페이지2</string>
+    <string name="menu_slideshow">페이지3</string>
+
+    <string name="home_second">홈 두번째</string>
+
+    <string name="app_name">후다닥</string>
+    <string name="identity">아이디</string>
+    <string name="password">비밀번호</string>
+    <string name="korean">한국어</string>
+    <string name="english">영어</string>
+    <string name="loginButton">로그인</string>
+    <string name="wrongId">아이디를 잘 못 입력하였습니다.</string>
+    <string name="wrongPw">비밀번호를 잘 못 입력하였습니다.</string>
+    <string name="idHint">아이디를 입력하세요.</string>
+    <string name="pwHint">비밀번호를 입력하세요.</string>
+
+</resources>

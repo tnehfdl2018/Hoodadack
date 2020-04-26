@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 동영상 정보를 받아올 URL 입력창-->
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingLeft="60dp">
+
+    <EditText
+        android:id="@+id/insertUrl"
+        android:hint="주소를 입력하세요."
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/addUrl"
+        android:src="@mipmap/ic_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        app:layout_constraintLeft_toRightOf="@+id/insertUrl"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="20dp"
+        android:background="#ffffff"/>
+
+    <ImageButton
+        android:id="@+id/removeUrl"
+        android:src="@mipmap/ic_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        app:layout_constraintLeft_toRightOf="@+id/insertUrl"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="20dp"
+        android:background="#ffffff"
+        android:visibility="invisible"/>
+
+</android.support.constraint.ConstraintLayout>
