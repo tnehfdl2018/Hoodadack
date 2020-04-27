@@ -14,6 +14,8 @@ import com.example.hoodadack.R;
 import java.util.ArrayList;
 
 public class AdapterForInsertUrl extends BaseAdapter {
+    private ImageButton addBtn;
+    private ImageButton removeBtn;
     // 리스트뷰 데이터를 담을 arrayList생성
     ArrayList<UrlDataItems> arrayList = new ArrayList<>();
     private int indexCount = 1;
@@ -44,8 +46,8 @@ public class AdapterForInsertUrl extends BaseAdapter {
         }
 
         // 이미지버튼 생성
-        final ImageButton addBtn = convertView.findViewById(R.id.addUrl);
-        final ImageButton removeBtn = convertView.findViewById(R.id.removeUrl);
+        addBtn = convertView.findViewById(R.id.addUrl);
+        removeBtn = convertView.findViewById(R.id.removeUrl);
 
         if (arrayList.size() == 1) {
             addBtn.setVisibility(View.VISIBLE);
@@ -61,6 +63,7 @@ public class AdapterForInsertUrl extends BaseAdapter {
                 UrlDataItems urlDataItems = new UrlDataItems();
 
                 arrayList.add(indexCount, urlDataItems); // 새로운 데이터를 가진 항목을 리스트에 추가
+
                 indexCount++;
 
                 adapterForInsertUrl.notifyDataSetChanged();
@@ -88,5 +91,6 @@ public class AdapterForInsertUrl extends BaseAdapter {
         UrlDataItems urlDataItems = new UrlDataItems();
 
         arrayList.add(0, urlDataItems);
+
     }
 }
