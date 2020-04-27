@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.hoodadack.R;
 
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 public class AdapterForInsertUrl extends BaseAdapter {
     // 리스트뷰 데이터를 담을 arrayList생성
     ArrayList<UrlDataItems> arrayList = new ArrayList<>();
+    private int indexCount = 1;
 
     @Override
     public int getCount() { // arrayList크키를 리턴
@@ -45,6 +47,11 @@ public class AdapterForInsertUrl extends BaseAdapter {
         final ImageButton addBtn = convertView.findViewById(R.id.addUrl);
         final ImageButton removeBtn = convertView.findViewById(R.id.removeUrl);
 
+        if (arrayList.size() == 1) {
+            addBtn.setVisibility(View.VISIBLE);
+            removeBtn.setVisibility(View.INVISIBLE);
+        }
+
         // 추가 버튼 클릭시 리스트 항목 추가
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,29 +60,23 @@ public class AdapterForInsertUrl extends BaseAdapter {
                 AdapterForInsertUrl adapterForInsertUrl = new AdapterForInsertUrl();
                 UrlDataItems urlDataItems = new UrlDataItems();
 
-                // arrayList 크기를 확인해서 1개보다 많으면 생성시
-                // 추가하는 버튼은 invisible, 삭제하는 버튼은 visible 한다.
-                if (arrayList.size() > 0) {
-                    arrayList.add(urlDataItems); // 새로운 데이터를 가진 항목을 리스트에 추가
-                } else {
-                    arrayList.add(urlDataItems); // 새로운 데이터를 가진 항목을 리스트에 추가
-                }
+                arrayList.add(indexCount, urlDataItems); // 새로운 데이터를 가진 항목을 리스트에 추가
+                indexCount++;
 
-//                adapterForInsertUrl.notifyDataSetChanged();
-//                Log.i("추우우우우가", String.valueOf(arrayList.size()));
-//                Log.i("추우우우우가", String.valueOf(arrayList));
-
-                addBtn.setVisibility(View.INVISIBLE);
-                removeBtn.setVisibility(View.VISIBLE);
+                adapterForInsertUrl.notifyDataSetChanged();
             }
         });
 
         removeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Log.i("지이이이이워", String.valueOf(arrayList.size()));
-
+                UrlDataItems urlDataItems = new UrlDataItems();
+                if (arrayList.size() > 1) {
+                    Log.i("지이이이이워", String.valueOf(v.getId()));
+                    arrayList.remove(urlDataItems);
+                } else {
+                    Log.i("지이이이이워", String.valueOf(v.getId()));
+                }
             }
         });
         return convertView;
@@ -86,6 +87,6 @@ public class AdapterForInsertUrl extends BaseAdapter {
     public void addItem() {
         UrlDataItems urlDataItems = new UrlDataItems();
 
-        arrayList.add(urlDataItems);
+        arrayList.add(0, urlDataItems);
     }
 }

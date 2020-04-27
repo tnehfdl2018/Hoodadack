@@ -17,10 +17,8 @@ public class ShowLIstViewUrl extends Fragment {
     private ListView listView;
 
 
-    private HomeViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_show_listview_urllist, container, false);
 
         // 리스트뷰 생성
@@ -34,12 +32,12 @@ public class ShowLIstViewUrl extends Fragment {
 
         listView.setAdapter(adapterForInsertUrl);
 
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-
-            }
-        });
+//        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//
+//            }
+//        });
         return root;
     }
 }

@@ -2,6 +2,7 @@ package com.example.hoodadack;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.view.View;
 import android.view.Menu;
 import android.support.design.widget.NavigationView;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView wrongPw;
     private LinearLayout loginLayout; // mainActivity 레이아웃
     private LinearLayout showUrlList; // urlList 레이아웃
+    private AppBarLayout appBarLayout;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -53,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         wrongId = findViewById(R.id.wrongId);
         wrongPw = findViewById(R.id.wrongPw);
         loginLayout = findViewById(R.id.loginLayout);
+        appBarLayout = findViewById(R.id.appbarlayout);
 
         // 라디오 그룹안의 변경이 생길시 반응하는 메소드
         lang_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -87,7 +90,9 @@ public class MainActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                if (true) {
                 if (valid()) {
+                    appBarLayout.setVisibility(View.VISIBLE);
                     // 다음페이지로 넘어가는 intent
                     loginLayout.setVisibility(View.INVISIBLE); // 로그인 하는 레이아웃 invisible 처리
                     // invisible 되있는 urlList레이아웃 visible로 변경하여 보여주기

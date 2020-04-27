@@ -17,12 +17,8 @@ import com.example.hoodadack.R;
 public class ShowListViewVideo extends Fragment {
     private ListView listView;
 
-    private GalleryViewModel galleryViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_show_listview_videolist, container, false);
 
         // 리스트뷰 생성
@@ -36,12 +32,6 @@ public class ShowListViewVideo extends Fragment {
 
         listView.setAdapter(adapterForShowVideo);
 
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-
-            }
-        });
         return root;
     }
 }

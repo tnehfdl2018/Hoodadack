@@ -26,7 +26,8 @@
         app:layout_constraintLeft_toRightOf="@+id/insertUrl"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="20dp"
-        android:background="#ffffff"/>
+        android:background="#00000000"
+        android:visibility="invisible"/>
 
     <ImageButton
         android:id="@+id/removeUrl"
@@ -37,7 +38,6 @@
         app:layout_constraintLeft_toRightOf="@+id/insertUrl"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="20dp"
-        android:background="#ffffff"
-        android:visibility="invisible"/>
+        android:background="#00000000"/>
 
 </android.support.constraint.ConstraintLayout>
